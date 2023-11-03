@@ -63,12 +63,12 @@ body {
     margin: 0 auto 4rem auto;
 }
 
-#formTicket{
+#formTicket {
     width: 95%;
     margin: auto;
 }
 
-.cartelPrecio{
+.cartelPrecio {
     margin-top: 1rem;
     height: 4rem;
     background-color: lightsteelblue;
@@ -79,7 +79,7 @@ body {
     align-items: center;
 }
 
-.cartelPrecio p{
+.cartelPrecio p {
     height: 100%;
     width: 90%;
     margin: 0;
@@ -89,7 +89,7 @@ body {
     align-items: center;
 }
 
-#botones{
+#botones {
     width: 95%;
     margin: auto;
     padding: 1rem 0;
@@ -98,29 +98,52 @@ body {
     align-items: center;
 }
 
-.btnAction{
+.btnAction {
     width: 49%;
-    background-color: green;
-    border-radius: .5rem;
-    margin: auto;
-    padding: 0;
-    height: 2.5rem;
-    border: none;
-    color: white;
-    font-weight: 500;
 }
 
-.btnAction:hover{
-    background-color: #034f03;
-}
-
-footer{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    height: 8rem;
+footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+    gap: 10px;
+    min-height: 8rem;
     width: 100%;
-    background-image: linear-gradient(to left,#2e2e6b,#0000ff76);
+    background-image: linear-gradient(to left, #2e2e6b, #0000ff76);
     color: white;
     font-weight: 500;
+}
+
+footer div {
+    width: 100%;
+    height: 8rem;
+}
+
+footer div p {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+@media(max-width: 1000px) {
+
+    .navul {
+        display: none;
+    }
+
+    .descuentos {
+        width: 100%;
+    }
+
+    .contenedorForm {
+        width: 95%;
+        height: auto;
+        padding: 2rem 0;
+    }
+
+
 }

@@ -104,13 +104,21 @@
 
                     <div class="col">
 
-                        <input type="text" id="nombre" class="form-control" placeholder="Ingrese su nombre" aria-label="Nombre">
+                        <input type="text" id="nombre" class="form-control" placeholder="Ingrese su nombre"
+                            aria-label="Nombre" onkeyup="validarNombre()">
+
+                        <p class="text-danger" id="nombreErr" style="display: none;"> El nombre debe tener entre 1 y 20
+                            caracteres.</p>
 
                     </div>
 
                     <div class="col">
 
-                        <input type="text" id="apellido" class="form-control" placeholder="Ingrese su apellido" aria-label="Apellido">
+                        <input type="text" id="apellido" class="form-control" placeholder="Ingrese su apellido"
+                            aria-label="Apellido" onkeyup="validarApellido()">
+
+                        <p class="text-danger" id="apellidoErr" style="display: none;"> El apellido debe tener entre 1 y
+                            20 caracteres.</p>
 
                     </div>
 
@@ -118,7 +126,10 @@
 
                 <div class="mb-3">
 
-                    <input type="email" id="email" class="form-control" id="email" placeholder="Ingrese su email" aria-label="Email">
+                    <input type="email" id="email" class="form-control" id="email" placeholder="Ingrese su email"
+                        aria-label="Email" onkeyup="validarEmail()">
+
+                    <p class="text-danger" id="emailErr" style="display: none;"> El formato de email no es valido.</p>
 
                 </div>
 
@@ -128,7 +139,11 @@
 
                         <label class="mb-2" for="cantidad"> Cantidad: </label>
 
-                        <input type="number" id="cantidad" class="form-control" aria-label="Cantidad">
+                        <input type="number" id="cantidad" class="form-control" aria-label="Cantidad"
+                            onkeyup="validarCantidad()">
+
+                        <p class="text-danger" id="cantidadErr" style="display: none;">La cantidad no puede ser negativa
+                            ni mayor a 100.</p>
 
                     </div>
 
@@ -136,7 +151,7 @@
 
                         <label class="mb-2" for="categoria"> Categoria: </label>
 
-                        <select id="categoria" class="form-select" aria-label="Categoria">
+                        <select id="categoria" class="form-select" aria-label="Categoria" onchange="validaCategoria()">
 
                             <option selected disabled>Seleccione una categoria</option>
 
@@ -147,6 +162,9 @@
                             <option value="3">Junior</option>
 
                         </select>
+
+                        <p class="text-danger" id="categoriaErr" style="display: none;">La categoria ingresada no es
+                            valida.</p>
 
                     </div>
 
@@ -164,9 +182,57 @@
 
             <div id="botones">
 
-                    <button class="btnAction" id="btnBorrar"> Borrar </button>
- 
-                    <button class="btnAction" id="btnResumen"> Resumen </button>
+                <button class="btn btn-success btnAction" id="btnResumen" disabled> Resumen </button>
+
+                <!-- Abrir Reiniciar formulario Modal -->
+                <button type="button" class="btn btn-warning btnAction" data-bs-toggle="modal"
+                    data-bs-target="#resetForm">
+                    Borrar
+                </button>
+
+                <!-- Reiniciar formulario Modal -->
+                <div class="modal fade" id="resetForm" tabindex="-1" aria-labelledby="resetFormLabel"
+                    aria-hidden="true">
+
+                    <div class="modal-dialog modal-dialog-centered">
+
+                        <div class="modal-content">
+
+                            <div class="modal-header">
+
+                                <h1 class="modal-title fs-5" id="resetFormLabel">Reiniciar formulario</h1>
+
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+
+                            </div>
+
+                            <div class="modal-body">
+
+                                <p>
+                                    Se borrarán los datos ingresados <br>
+
+                                    ¿Confirma la operación?
+
+                                </p>
+
+                            </div>
+
+                            <div class="modal-footer">
+
+                                <button type="button" class="btn btn-danger" id="btnBorrar"
+                                    data-bs-dismiss="modal">Reiniciar formulario</button>
+
+                                <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancelar</button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
 
             </div>
 
@@ -206,6 +272,7 @@
         </div>
 
     </footer>
+
 
 
 
