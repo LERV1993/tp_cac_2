@@ -45,9 +45,7 @@ btnResumen.addEventListener("click", () => {
 
         btnResumen.disabled = true;
 
-        formTicket.reset();
-
-        totPagar.textContent = "";
+        reiniciarFormulario();
 
     }
 
